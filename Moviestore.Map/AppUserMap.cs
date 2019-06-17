@@ -14,11 +14,11 @@ namespace Moviestore.Map
         public new void Configure(EntityTypeBuilder<AppUser> entity)
         {
             entity.ToTable("dbo.Users");
-            entity.Property(x => x.FirstName);
-            entity.Property(x => x.LastName);
-            entity.Property(x => x.UserName);
-            entity.Property(x => x.Role);
-            entity.Property(x => x.Password);
+            entity.Property(x => x.FirstName).IsRequired(false);
+            entity.Property(x => x.LastName).IsRequired(false); ;
+            entity.Property(x => x.UserName).IsRequired(true);
+            entity.Property(x => x.Role).IsRequired(true);
+            entity.Property(x => x.Password).IsRequired(true);
             
             
         }

@@ -12,6 +12,7 @@ namespace MovieStore.Data.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=202--11;Database=CoreMovieStore1;UID=sa;PWD=1234;");
+            
         }
         public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<Movie> Movies { get; set; }

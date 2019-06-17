@@ -13,8 +13,8 @@ namespace Moviestore.Map
         public new void Configure(EntityTypeBuilder<Movie> entity)
         {
             entity.ToTable("dbo.Movies");
-            entity.Property(x => x.MovieName);
-            entity.Property(x => x.Description);
+            entity.Property(x => x.MovieName).IsRequired(false); ;
+            entity.Property(x => x.Description).IsRequired(false); ;
             entity.HasOne(x => x.Category).WithMany(x => x.Movies).OnDelete(DeleteBehavior.Cascade);
             
             

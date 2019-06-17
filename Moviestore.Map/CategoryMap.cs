@@ -13,8 +13,8 @@ namespace Moviestore.Map
         public new void Configure(EntityTypeBuilder<Category> entity)
         {
             entity.ToTable("dbo.Categories");
-            entity.Property(x => x.CategoryName);
-            entity.Property(x => x.CategoryDescription);
+            entity.Property(x => x.CategoryName).IsRequired(false); ;
+            entity.Property(x => x.CategoryDescription).IsRequired(false); ;
             entity.HasMany(x => x.Movies).WithOne(x => x.Category).OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade);
             
         }
